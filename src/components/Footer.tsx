@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <small>
         <p>
-          See how projects from my website at{" "}
+          See more projects from my website at{" "}
           <a href="https://lukewebsterkhan.com" target="_blank">
             Luke Webster-Khan
           </a>
