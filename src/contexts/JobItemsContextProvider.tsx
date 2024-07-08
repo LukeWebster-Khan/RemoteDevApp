@@ -31,7 +31,6 @@ export function JobItemsContextProvider({
 
   const totalNumberOfResults = jobItems.length;
   const totalNumberOfPages = Math.ceil(totalNumberOfResults / RESULTS_PER_PAGE);
-
   const jobItemsSorted = useMemo(
     () =>
       [...jobItems]?.sort((a, b) => {
@@ -53,24 +52,18 @@ export function JobItemsContextProvider({
     [jobItemsSorted, currentPage]
   );
 
-  const handleChangePage = useCallback(
-    () => (direction: pageDirection) => {
-      if (direction === "next") {
-        setCurrentPage((prev) => prev + 1);
-      } else if (direction === "previous") {
-        setCurrentPage((prev) => prev - 1);
-      }
-    },
-    []
-  );
+  const handleChangePage = useCallback((direction: pageDirection) => {
+    if (direction === "next") {
+      setCurrentPage((prev) => prev + 1);
+    } else if (direction === "previous") {
+      setCurrentPage((prev) => prev - 1);
+    }
+  }, []);
 
-  const handleChangeSortBy = useCallback(
-    () => (sort: sortBy) => {
-      setSortBy(sort);
-      setCurrentPage(1);
-    },
-    []
-  );
+  const handleChangeSortBy = useCallback((sort: sortBy) => {
+    setSortBy(sort);
+    setCurrentPage(1);
+  }, []);
 
   const contextValue = useMemo(
     () => ({
