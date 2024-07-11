@@ -803,6 +803,9 @@ body::-webkit-scrollbar {
 .job-info__left {
   padding-left: 42px;
 }
+/* media query  for job-info__left removing left padding */
+@media (max-width: 1009px) {
+}
 
 .job-info__right {
   padding-right: 42px;
@@ -1115,7 +1118,7 @@ body::-webkit-scrollbar {
   .container {
     flex-direction: column;
     height: initial;
-    width: 100%;
+    width: 95%;
     max-width: 800px;
     border-radius: 8px;
     overflow: hidden;
@@ -1126,7 +1129,27 @@ body::-webkit-scrollbar {
   }
 
   .job-details {
-    display: none;
+    border-radius: 0;
+    padding: 0;
+    min-height: 500px;
+  }
+  .job-info__left {
+    padding-left: 15px;
+  }
+  .job-info::before {
+    border-radius: 0;
+  }
+
+  .job-details > div > img {
+    border-radius: 0;
+  }
+
+  .job-details__footer-text {
+    padding-bottom: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
   }
 
   .footer {
@@ -1139,6 +1162,38 @@ body::-webkit-scrollbar {
 @media (max-width: 660px) {
   .intro {
     width: 100%;
+  }
+
+  /* .container {
+    padding: 0 10px;
+  } */
+
+  .job-info {
+    padding-top: 20px;
+    flex-direction: column;
+  }
+  .job-info__right {
+    padding: 0 10px;
+  }
+
+  .job-info__extras {
+    flex-wrap: wrap;
+  }
+
+  .qualifications {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .reviews {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  form {
+    padding: 0 10px;
   }
 
   .search {
